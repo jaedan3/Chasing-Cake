@@ -12,6 +12,7 @@ public class PlayerMovementBeginner : MonoBehaviour {
     public float speedMultiplier;
     private float horizontalMove = 0f;
     private Vector3 m_Velocity;
+    private bool m_DoubleJump = false;
 
     [Space]
     [Header("Jump Logic")]
@@ -36,11 +37,27 @@ public class PlayerMovementBeginner : MonoBehaviour {
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed + speedMultiplier;
 
-        if (m_Grounded && Input.GetButtonDown("Jump"))
+        if ((m_Grounded && Input.GetButtonDown("Jump")) || (m_DoubleJump && Input.GetButtonDown("Jump")))
         {
+            m_DoubleJump = false;
             m_Grounded = false;
             m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
         }
+    }
+
+    //Double Jump Change
+    private void LateUpdate()
+    {
+        if (m_Grounded)
+        {
+            m_DoubleJump = false;
+        }
+    }
+
+    //Changes Double Jump Value
+    public void changeDoubleJump (bool newDoubleJump)
+    {
+        m_DoubleJump = newDoubleJump;
     }
 
     // FixedUpdate is called multiple times per frame at different rates
@@ -55,7 +72,7 @@ public class PlayerMovementBeginner : MonoBehaviour {
     //Changes position of the player
     public void changePosition(float newX, float newY, float newZ)
     {
-        Vector2 newPos = new Vector3(newX, newY, newZ);
+        Vector3 newPos = new Vector3(newX, newY, newZ);
         transform.position = newPos;
     }
 
