@@ -9,6 +9,7 @@ public class PlayerMovementBeginner : MonoBehaviour {
     [Header("Movement Logic")]
     //=========== Moving Logic ============
     public float runSpeed = 0f;
+    public float speedMultiplier;
     private float horizontalMove = 0f;
     private Vector3 m_Velocity;
 
@@ -33,7 +34,7 @@ public class PlayerMovementBeginner : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed + speedMultiplier;
 
         if (m_Grounded && Input.GetButtonDown("Jump"))
         {
@@ -49,5 +50,24 @@ public class PlayerMovementBeginner : MonoBehaviour {
         m_RigidBody2D.velocity = targetVelocity;
 
         m_Grounded = Physics2D.Linecast(transform.position, m_GroundCheck.position, m_GroundLayer);
+    }
+
+    //Changes position of the player
+    public void changePosition(float newX, float newY, float newZ)
+    {
+        Vector2 newPos = new Vector3(newX, newY, newZ);
+        transform.position = newPos;
+    }
+
+    //Changes RunSpeed
+    public void changeSpeed(float newSpeed)
+    {
+        speedMultiplier = newSpeed;
+    }
+
+    //Changes the JumpForce
+    public void changeJumpForce(float newForce)
+    {
+        m_JumpForce = newForce;
     }
 }
