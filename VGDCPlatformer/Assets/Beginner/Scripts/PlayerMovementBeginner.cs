@@ -14,6 +14,8 @@ public class PlayerMovementBeginner : MonoBehaviour
     public float speedMultiplier;
     private float horizontalMove = 0f;
     private Vector3 m_Velocity;
+    private SpriteRenderer flip;
+
 
 
     [Space]
@@ -35,6 +37,7 @@ public class PlayerMovementBeginner : MonoBehaviour
         speedMultiplierDecayRate = 0.99f;
         speedMultiplier = 1;
         m_Velocity = Vector3.zero; //same as new Vector3(0,0,0)
+        flip = gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -60,6 +63,8 @@ public class PlayerMovementBeginner : MonoBehaviour
             m_DoubleJump = false;
             m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, m_JumpForce);
         }
+
+        
     }
 
     //Changes Double Jump Value
@@ -74,7 +79,17 @@ public class PlayerMovementBeginner : MonoBehaviour
         Vector3 targetVelocity = new Vector2(horizontalMove * 10f * Time.fixedDeltaTime, m_RigidBody2D.velocity.y);
         m_RigidBody2D.velocity = targetVelocity;
 
+
         m_Grounded = Physics2D.Linecast(transform.position, m_GroundCheck.position, m_GroundLayer);
+
+        if (Input.GetAxisRaw("Horizontal") > 0 && m_RigidBody2D.velocity.x > 0)
+        {
+            flip.flipX = false;
+        }
+        else if (Input.GetAxisRaw("Horizontal") < 0 && m_RigidBody2D.velocity.x < 0)
+        {
+            flip.flipX = true;
+        }
     }
 
     //Changes position of the player
