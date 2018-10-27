@@ -19,7 +19,7 @@ public class PlayerMovementBeginner : MonoBehaviour
     [Header("Jump Logic")]
 
     //============ Jump Logic ============
-    public float m_JumpForce = 200f;
+    public float m_JumpForce;
     private bool m_Grounded;
     private bool m_DoubleJump = false;
     private bool canDoubleJump = false;
