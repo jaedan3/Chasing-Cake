@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementBeginner : MonoBehaviour {
+public class PlayerMovementBeginner : MonoBehaviour
+{
 
     public Rigidbody2D m_RigidBody2D;
 
     [Header("Movement Logic")]
     //=========== Moving Logic ============
     public float runSpeed = 0f;
+    public float speedMultiplier;
     private float horizontalMove = 0f;
     private Vector3 m_Velocity;
+
 
     [Space]
     [Header("Jump Logic")]
@@ -18,6 +21,8 @@ public class PlayerMovementBeginner : MonoBehaviour {
     //============ Jump Logic ============
     public float m_JumpForce = 200f;
     private bool m_Grounded;
+    private bool m_DoubleJump = false;
+    private bool canDoubleJump = false;
     public Transform m_GroundCheck;
     public LayerMask m_GroundLayer;
 
@@ -33,13 +38,31 @@ public class PlayerMovementBeginner : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed + speedMultiplier;
 
-        if (m_Grounded && Input.GetButtonDown("Jump"))
+        if (m_Grounded && Input.GetButtonDown("Jump") && canDoubleJump == false)
         {
             m_Grounded = false;
             m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
         }
+        else if (m_Grounded && Input.GetButtonDown("Jump") && canDoubleJump)
+        {
+            m_DoubleJump = true;
+            canDoubleJump = false;
+            m_Grounded = false;
+            m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
+        }
+        else if (m_DoubleJump && Input.GetButtonDown("Jump"))
+        {
+            m_DoubleJump = false;
+            m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
+        }
+    }
+
+    //Changes Double Jump Value
+    public void changeDoubleJump(bool newDoubleJump)
+    {
+        canDoubleJump = newDoubleJump;
     }
 
     // FixedUpdate is called multiple times per frame at different rates
@@ -49,5 +72,24 @@ public class PlayerMovementBeginner : MonoBehaviour {
         m_RigidBody2D.velocity = targetVelocity;
 
         m_Grounded = Physics2D.Linecast(transform.position, m_GroundCheck.position, m_GroundLayer);
+    }
+
+    //Changes position of the player
+    public void changePosition(float newX, float newY, float newZ)
+    {
+        Vector3 newPos = new Vector3(newX, newY, newZ);
+        transform.position = newPos;
+    }
+
+    //Changes RunSpeed
+    public void changeSpeed(float newSpeed)
+    {
+        speedMultiplier = newSpeed;
+    }
+
+    //Changes the JumpForce
+    public void changeJumpForce(float newForce)
+    {
+        m_JumpForce = newForce;
     }
 }
