@@ -43,19 +43,19 @@ public class PlayerMovementBeginner : MonoBehaviour
         if (m_Grounded && Input.GetButtonDown("Jump") && canDoubleJump == false)
         {
             m_Grounded = false;
-            m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
+            m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, m_JumpForce);
         }
         else if (m_Grounded && Input.GetButtonDown("Jump") && canDoubleJump)
         {
             m_DoubleJump = true;
             canDoubleJump = false;
             m_Grounded = false;
-            m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
+            m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, m_JumpForce);
         }
         else if (m_DoubleJump && Input.GetButtonDown("Jump"))
         {
             m_DoubleJump = false;
-            m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
+            m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, m_JumpForce);
         }
     }
 
