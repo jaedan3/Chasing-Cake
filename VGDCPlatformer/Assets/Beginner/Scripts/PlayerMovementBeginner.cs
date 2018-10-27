@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementBeginner : MonoBehaviour {
+public class PlayerMovementBeginner : MonoBehaviour
+{
 
     public Rigidbody2D m_RigidBody2D;
 
@@ -12,7 +13,7 @@ public class PlayerMovementBeginner : MonoBehaviour {
     public float speedMultiplier;
     private float horizontalMove = 0f;
     private Vector3 m_Velocity;
-    private bool m_DoubleJump = false;
+
 
     [Space]
     [Header("Jump Logic")]
@@ -20,6 +21,8 @@ public class PlayerMovementBeginner : MonoBehaviour {
     //============ Jump Logic ============
     public float m_JumpForce = 200f;
     private bool m_Grounded;
+    private bool m_DoubleJump = false;
+    private bool canDoubleJump = false;
     public Transform m_GroundCheck;
     public LayerMask m_GroundLayer;
 
@@ -37,27 +40,29 @@ public class PlayerMovementBeginner : MonoBehaviour {
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed + speedMultiplier;
 
-        if ((m_Grounded && Input.GetButtonDown("Jump")) || (m_DoubleJump && Input.GetButtonDown("Jump")))
+        if (m_Grounded && Input.GetButtonDown("Jump") && canDoubleJump == false)
+        {
+            m_Grounded = false;
+            m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
+        }
+        else if (m_Grounded && Input.GetButtonDown("Jump") && canDoubleJump)
+        {
+            m_DoubleJump = true;
+            canDoubleJump = false;
+            m_Grounded = false;
+            m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
+        }
+        else if (m_DoubleJump && Input.GetButtonDown("Jump"))
         {
             m_DoubleJump = false;
-            m_Grounded = false;
             m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
         }
     }
 
-    //Double Jump Change
-    private void LateUpdate()
-    {
-        if (m_Grounded)
-        {
-            m_DoubleJump = false;
-        }
-    }
-
     //Changes Double Jump Value
-    public void changeDoubleJump (bool newDoubleJump)
+    public void changeDoubleJump(bool newDoubleJump)
     {
-        m_DoubleJump = newDoubleJump;
+        canDoubleJump = newDoubleJump;
     }
 
     // FixedUpdate is called multiple times per frame at different rates
