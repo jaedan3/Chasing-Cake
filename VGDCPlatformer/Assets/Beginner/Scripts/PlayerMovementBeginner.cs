@@ -10,6 +10,7 @@ public class PlayerMovementBeginner : MonoBehaviour
     [Header("Movement Logic")]
     //=========== Moving Logic ============
     public float runSpeed = 0f;
+    public float speedMultiplierDecayRate;
     public float speedMultiplier;
     private float horizontalMove = 0f;
     private Vector3 m_Velocity;
@@ -19,7 +20,7 @@ public class PlayerMovementBeginner : MonoBehaviour
     [Header("Jump Logic")]
 
     //============ Jump Logic ============
-    public float m_JumpForce = 200f;
+    public float m_JumpForce;
     private bool m_Grounded;
     private bool m_DoubleJump = false;
     private bool canDoubleJump = false;
@@ -31,14 +32,16 @@ public class PlayerMovementBeginner : MonoBehaviour
     void Start()
     {
         //m_RigidBody2D = GetComponent<Rigidbody2D>(); //Instead of manually putting the RigidBody2D Component we can get the component from the Object
-
+        speedMultiplierDecayRate = 0.99f;
+        speedMultiplier = 1;
         m_Velocity = Vector3.zero; //same as new Vector3(0,0,0)
     }
 
     // Update is called once per frame
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed + speedMultiplier;
+        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed * speedMultiplier;
+        speedMultiplier = Mathf.Max(1, speedMultiplier * speedMultiplierDecayRate);
 
         if (m_Grounded && Input.GetButtonDown("Jump") && canDoubleJump == false)
         {
@@ -82,7 +85,7 @@ public class PlayerMovementBeginner : MonoBehaviour
     }
 
     //Changes RunSpeed
-    public void changeSpeed(float newSpeed)
+    public void setSpeedMultiplier(float newSpeed)
     {
         speedMultiplier = newSpeed;
     }
