@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61371344250995684}
   - component: {fileID: 61553651485889090}
   - component: {fileID: 114921584262121362}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GravityDecrease
   m_TagString: Untagged
   m_Icon: {fileID: 0}
