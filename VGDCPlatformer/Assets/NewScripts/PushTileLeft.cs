@@ -25,22 +25,22 @@ public class PushTileLeft : MonoBehaviour {
     {
         if(collision.tag == "Player")
         {
-            StartCoroutine(waittest());
+            /*StartCoroutine(waittest());
             GameObject obj = collision.gameObject;
             Rigidbody2D rigid = obj.GetComponent<Rigidbody2D>();
             Debug.Log("check");
-            rigid.velocity = new Vector2(-push,0);
-            //player.changePosition(player.transform.position.x - 1, player.transform.position.y, player.transform.position.z);
-            //player.changePosition(player.transform.position.x - 1, player.transform.position.y, player.transform.position.z);
-            //player.changePosition(player.transform.position.x - 1, player.transform.position.y, player.transform.position.z);
+            rigid.velocity = new Vector2(-push,0);*/
+            Vector3 pushLeft = new Vector3(-160, 0, 0);
+            player.transform.Translate(pushLeft * Time.deltaTime);
         }
     }
-    /*
+    
     public void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.tag == "Player")
         {
-
+            //Vector3 pushLeft = new Vector3(-20, 0, 0);
+            //player.transform.Translate(pushLeft * Time.deltaTime);
         }
-    }*/
+    }
 }
