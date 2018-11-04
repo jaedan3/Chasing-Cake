@@ -16,7 +16,7 @@ public class InverseControls : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && player.getInverse() == false)
         {
             StartCoroutine(Wait());   
         }
@@ -24,9 +24,11 @@ public class InverseControls : MonoBehaviour {
 
     IEnumerator Wait()
     {
+        player.changeInverse(true);
         StartCoroutine(Wait2());
         yield return new WaitForSecondsRealtime(5);
         player.changeHInput("Horizontal");
+        player.changeInverse(false);
     }
 
     IEnumerator Wait2()

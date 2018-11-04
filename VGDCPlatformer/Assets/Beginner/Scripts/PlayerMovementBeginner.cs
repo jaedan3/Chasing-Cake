@@ -9,6 +9,7 @@ public class PlayerMovementBeginner : MonoBehaviour
 
     [Header("Movement Logic")]
     //=========== Moving Logic ============
+    private bool inInverse;
     private string horizontalInput;
     public float runSpeed = 0f;
     public float speedMultiplierDecayRate;
@@ -35,6 +36,7 @@ public class PlayerMovementBeginner : MonoBehaviour
     void Start()
     {
         //m_RigidBody2D = GetComponent<Rigidbody2D>(); //Instead of manually putting the RigidBody2D Component we can get the component from the Object
+        inInverse = false;
         horizontalInput = "Horizontal";
         speedMultiplierDecayRate = 0.99f;
         speedMultiplier = 1;
@@ -67,6 +69,15 @@ public class PlayerMovementBeginner : MonoBehaviour
         }
 
         
+    }
+    public bool getInverse()
+    {
+        return inInverse;
+    }
+
+    public void changeInverse(bool newInverse)
+    {
+        inInverse = newInverse;
     }
 
     public void changeHInput(string newInput)
