@@ -19,7 +19,6 @@ public class DoubleJump : MonoBehaviour {
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("Triggered");
             player.changeDoubleJump(true);
         }
     }
