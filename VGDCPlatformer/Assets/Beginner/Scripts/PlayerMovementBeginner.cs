@@ -9,6 +9,8 @@ public class PlayerMovementBeginner : MonoBehaviour
 
     [Header("Movement Logic")]
     //=========== Moving Logic ============
+    private bool inInverse;
+    private string horizontalInput;
     public float runSpeed = 0f;
     public float speedMultiplierDecayRate;
     public float speedMultiplier;
@@ -34,6 +36,8 @@ public class PlayerMovementBeginner : MonoBehaviour
     void Start()
     {
         //m_RigidBody2D = GetComponent<Rigidbody2D>(); //Instead of manually putting the RigidBody2D Component we can get the component from the Object
+        inInverse = false;
+        horizontalInput = "Horizontal";
         speedMultiplierDecayRate = 0.99f;
         speedMultiplier = 1;
         m_Velocity = Vector3.zero; //same as new Vector3(0,0,0)
@@ -43,7 +47,7 @@ public class PlayerMovementBeginner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed * speedMultiplier;
+        horizontalMove = Input.GetAxisRaw(horizontalInput) * runSpeed * speedMultiplier;
         speedMultiplier = Mathf.Max(1, speedMultiplier * speedMultiplierDecayRate);
 
         if (m_Grounded && Input.GetButtonDown("Jump") && canDoubleJump == false)
@@ -66,7 +70,20 @@ public class PlayerMovementBeginner : MonoBehaviour
 
         
     }
+    public bool getInverse()
+    {
+        return inInverse;
+    }
 
+    public void changeInverse(bool newInverse)
+    {
+        inInverse = newInverse;
+    }
+
+    public void changeHInput(string newInput)
+    {
+        horizontalInput = newInput;
+    }
     //Changes Double Jump Value
     public void changeDoubleJump(bool newDoubleJump)
     {
@@ -82,11 +99,11 @@ public class PlayerMovementBeginner : MonoBehaviour
 
         m_Grounded = Physics2D.Linecast(transform.position, m_GroundCheck.position, m_GroundLayer);
 
-        if (Input.GetAxisRaw("Horizontal") > 0 && m_RigidBody2D.velocity.x > 0)
+        if (Input.GetAxisRaw(horizontalInput) > 0 && m_RigidBody2D.velocity.x > 0)
         {
             flip.flipX = false;
         }
-        else if (Input.GetAxisRaw("Horizontal") < 0 && m_RigidBody2D.velocity.x < 0)
+        else if (Input.GetAxisRaw(horizontalInput) < 0 && m_RigidBody2D.velocity.x < 0)
         {
             flip.flipX = true;
         }
