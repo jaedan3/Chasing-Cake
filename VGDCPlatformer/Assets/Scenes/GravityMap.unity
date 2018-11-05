@@ -1001,6 +1001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RigidBody2D: {fileID: 562322460}
+  animator: {fileID: 0}
   runSpeed: 20
   speedMultiplierDecayRate: 0
   speedMultiplier: 0
@@ -1397,3 +1398,45 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4348421193669024, guid: e590b99256da1b74bb7729945dd89650,
     type: 2}
   m_PrefabInternal: {fileID: 1528313185}
+--- !u!1001 &1844019671
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4762475774774610, guid: 0b5ccd034435eaf4291df00196bcc824, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762475774774610, guid: 0b5ccd034435eaf4291df00196bcc824, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762475774774610, guid: 0b5ccd034435eaf4291df00196bcc824, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762475774774610, guid: 0b5ccd034435eaf4291df00196bcc824, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762475774774610, guid: 0b5ccd034435eaf4291df00196bcc824, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762475774774610, guid: 0b5ccd034435eaf4291df00196bcc824, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762475774774610, guid: 0b5ccd034435eaf4291df00196bcc824, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762475774774610, guid: 0b5ccd034435eaf4291df00196bcc824, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0b5ccd034435eaf4291df00196bcc824, type: 2}
+  m_IsPrefabAsset: 0
