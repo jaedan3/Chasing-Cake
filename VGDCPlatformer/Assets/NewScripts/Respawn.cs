@@ -22,6 +22,7 @@ public class Respawn : MonoBehaviour {
     IEnumerator respawn()
     {
         yield return new WaitForSecondsRealtime(3);
+        
         player.SetActive(true);
     }
 }
