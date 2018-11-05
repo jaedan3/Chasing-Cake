@@ -6,6 +6,7 @@ public class PlayerMovementBeginner : MonoBehaviour
 {
 
     public Rigidbody2D m_RigidBody2D;
+    public Animator animator;
 
     [Header("Movement Logic")]
     //=========== Moving Logic ============
@@ -17,6 +18,7 @@ public class PlayerMovementBeginner : MonoBehaviour
     private float horizontalMove = 0f;
     private Vector3 m_Velocity;
     private SpriteRenderer flip;
+    private float currentVerticalMove = 0f;
 
 
 
@@ -49,6 +51,12 @@ public class PlayerMovementBeginner : MonoBehaviour
     {
         horizontalMove = Input.GetAxisRaw(horizontalInput) * runSpeed * speedMultiplier;
         speedMultiplier = Mathf.Max(1, speedMultiplier * speedMultiplierDecayRate);
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+
+        currentVerticalMove = m_RigidBody2D.velocity.y;
+        animator.SetFloat("VerticalSpeed", currentVerticalMove);
+        if(currentVerticalMove != 0)
+            Debug.Log(currentVerticalMove);
 
         if (m_Grounded && Input.GetButtonDown("Jump") && canDoubleJump == false)
         {
@@ -67,6 +75,8 @@ public class PlayerMovementBeginner : MonoBehaviour
             m_DoubleJump = false;
             m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, m_JumpForce);
         }
+
+
 
         
     }
@@ -96,8 +106,16 @@ public class PlayerMovementBeginner : MonoBehaviour
         Vector3 targetVelocity = new Vector2(horizontalMove * 10f * Time.fixedDeltaTime, m_RigidBody2D.velocity.y);
         m_RigidBody2D.velocity = targetVelocity;
 
-
         m_Grounded = Physics2D.Linecast(transform.position, m_GroundCheck.position, m_GroundLayer);
+
+        if(!m_Grounded)
+        {
+            animator.SetBool("Jumping", true);
+        }
+        if(m_Grounded)
+        {
+            animator.SetBool("Jumping", false);
+        }
 
         if (Input.GetAxisRaw(horizontalInput) > 0 && m_RigidBody2D.velocity.x > 0)
         {
