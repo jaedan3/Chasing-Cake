@@ -104,6 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52c5d3997194b344181ca2d68c0c169c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ownCollider: {fileID: 61250207207234628}
+  triggerCollider: {fileID: 61751163079980662}
   changeSprite: {fileID: 21300000, guid: 8c5d6ded5ea8790418cc77a39099849c, type: 3}
   waitTime: 5
 --- !u!212 &212295333952312730
