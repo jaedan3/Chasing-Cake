@@ -5,7 +5,8 @@ using UnityEngine;
 public class GoalWall : MonoBehaviour {
     private SpriteRenderer sprite;
     private Sprite originalSprite;
-    private Collider2D ownCollider;
+    public Collider2D ownCollider;
+    public Collider2D triggerCollider;
     public Sprite changeSprite;
     public float waitTime;
     private GameObject player;
@@ -15,7 +16,6 @@ public class GoalWall : MonoBehaviour {
 	void Start () {
         sprite = gameObject.GetComponent<SpriteRenderer>();
         originalSprite = sprite.sprite;
-        ownCollider = gameObject.GetComponent<Collider2D>();
         player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
@@ -37,10 +37,12 @@ public class GoalWall : MonoBehaviour {
     {
         sprite.sprite = changeSprite;
         ownCollider.enabled = false;
+        triggerCollider.enabled = false;
         yield return new WaitForSecondsRealtime(waitTime);
         ownCollider.enabled = true;
+        triggerCollider.enabled = true;
         sprite.sprite = originalSprite;
-        if (Mathf.Abs(player.transform.position.x - gameObject.transform.position.x) < .15f)
+        if (Mathf.Abs(player.transform.position.x - gameObject.transform.position.x) < .3f)
         {
             player.SetActive(false);
         }
