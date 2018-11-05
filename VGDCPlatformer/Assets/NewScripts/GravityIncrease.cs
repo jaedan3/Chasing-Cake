@@ -21,7 +21,7 @@ public class GravityIncrease : MonoBehaviour {
         if(collision.tag == "Player")
         {
             Debug.Log("GravityIncreasing");
-            player.gravityScale = 2;
+            player.gravityScale = 7;
         }
     }
 
