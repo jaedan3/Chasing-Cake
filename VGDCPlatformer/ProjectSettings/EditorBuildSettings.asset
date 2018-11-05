@@ -6,6 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_scene/SampleScene.unity
+    path: Assets/Beginner/_scene/SampleScene.unity
     guid: 032fa15e868e7f24299f482d07aa9bf1
+  - enabled: 1
+    path: Assets/Scenes/MichaelsScene.unity
+    guid: ea7bb4cc723930b469f88f92fd6727b1
+  - enabled: 1
+    path: Assets/Scenes/AnniesScene.unity
+    guid: 98535ed371ba26d469af95806cbe180b
+  - enabled: 1
+    path: Assets/Scenes/BrandonsScene.unity
+    guid: a07c298830a506c459bdd0d2671ece61
+  - enabled: 1
+    path: Assets/Scenes/GravityMap.unity
+    guid: 78f9320badd68b04c9bb4d093d5dfbd3
+  - enabled: 1
+    path: Assets/Scenes/JoonsScene.unity
+    guid: 25ad309b6b689e943b4a780bc06357e1
+  - enabled: 1
+    path: Assets/Scenes/KennedysScene.unity
+    guid: 9ee1b3055f964dd41b4ab9f50c7e3316
+  - enabled: 1
+    path: Assets/Scenes/ObservantCakes.unity
+    guid: 27a9d105dd3828c4b90072b4de8a8344
   m_configObjects: {}
