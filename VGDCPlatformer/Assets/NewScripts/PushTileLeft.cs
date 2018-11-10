@@ -30,7 +30,7 @@ public class PushTileLeft : MonoBehaviour {
             Rigidbody2D rigid = obj.GetComponent<Rigidbody2D>();
             Debug.Log("check");
             rigid.velocity = new Vector2(-push,0);*/
-            Vector3 pushLeft = new Vector3(-160, 0, 0);
+            Vector3 pushLeft = new Vector3(-push, 0, 0);
             player.transform.Translate(pushLeft * Time.deltaTime);
         }
     }
