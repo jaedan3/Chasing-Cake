@@ -19,7 +19,7 @@ public class GravityReset : MonoBehaviour {
         if (collision.tag == "Player")
         {
             Debug.Log("GravityDecreasing");
-            player.gravityScale = 1;
+            player.gravityScale = 5;
         }
     }
 }

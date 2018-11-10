@@ -20,7 +20,7 @@ public class GravityDecrease : MonoBehaviour {
         if(collision.tag == "Player")
         {
             Debug.Log("GravityDecreasing");
-            player.gravityScale = 0.7f;
+            player.gravityScale = 2;
         }
     }
 }
