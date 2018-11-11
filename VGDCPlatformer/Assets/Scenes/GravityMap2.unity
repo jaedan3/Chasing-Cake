@@ -1759,6 +1759,11 @@ Prefab:
       propertyPath: m_Name
       value: AnimatedPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 114589616246180758, guid: 321ce382a73dea448b80b3fa55c3accd,
+        type: 2}
+      propertyPath: m_JumpForce
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 321ce382a73dea448b80b3fa55c3accd, type: 2}
   m_IsPrefabAsset: 0
