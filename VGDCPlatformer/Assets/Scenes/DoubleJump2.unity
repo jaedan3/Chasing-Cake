@@ -164,11 +164,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4322950685074768, guid: 321ce382a73dea448b80b3fa55c3accd, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.8
+      value: -1.86
       objectReference: {fileID: 0}
     - target: {fileID: 4322950685074768, guid: 321ce382a73dea448b80b3fa55c3accd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.5015674
+      value: -2.01
       objectReference: {fileID: 0}
     - target: {fileID: 4322950685074768, guid: 321ce382a73dea448b80b3fa55c3accd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -956,6 +956,11 @@ Prefab:
         type: 2}
       propertyPath: m_Tiles.Array.data[44].second.m_ColliderType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2569400265277624418, guid: dac45c7de70f2c149b317c68e0c5cf55,
+        type: 2}
+      propertyPath: m_CellSize.y
+      value: 0.64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dac45c7de70f2c149b317c68e0c5cf55, type: 2}
@@ -3020,6 +3025,11 @@ Prefab:
     - target: {fileID: 4939360486330418, guid: 751a4646f503d294c94f6de88644e93a, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114049109635337022, guid: 751a4646f503d294c94f6de88644e93a,
+        type: 2}
+      propertyPath: newScene
+      value: GravityMap1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 751a4646f503d294c94f6de88644e93a, type: 2}

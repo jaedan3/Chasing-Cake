@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/BrandonsScene.unity
     guid: a07c298830a506c459bdd0d2671ece61
   - enabled: 1
-    path: Assets/Scenes/GravityMap.unity
+    path: Assets/Scenes/GravityMap1.unity
     guid: 78f9320badd68b04c9bb4d093d5dfbd3
   - enabled: 1
     path: Assets/Scenes/JoonsScene.unity
@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ObservantCakes.unity
     guid: 27a9d105dd3828c4b90072b4de8a8344
+  - enabled: 1
+    path: Assets/Scenes/DoubleJump2.unity
+    guid: c5e5b6c21a9969145ac6bfa146c6cac7
   m_configObjects: {}
