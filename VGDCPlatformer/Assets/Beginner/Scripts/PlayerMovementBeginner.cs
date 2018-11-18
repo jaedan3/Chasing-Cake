@@ -62,6 +62,7 @@ public class PlayerMovementBeginner : MonoBehaviour
         {
             m_Grounded = false;
             m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, m_JumpForce);
+            m_DoubleJump = false;
         }
         else if (m_Grounded && Input.GetButtonDown("Jump") && canDoubleJump)
         {
@@ -75,11 +76,8 @@ public class PlayerMovementBeginner : MonoBehaviour
             m_DoubleJump = false;
             m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, m_JumpForce);
         }
-
-
-
-        
     }
+
     public bool getInverse()
     {
         return inInverse;
