@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DoubleJumpMap.unity
     guid: f0eafb8b1f11a1c4aac53d91dc425d42
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 4c0a8cf08100b2241b305ce3f6457249
   m_configObjects: {}

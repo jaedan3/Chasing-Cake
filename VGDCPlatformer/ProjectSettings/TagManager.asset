@@ -9,6 +9,7 @@ TagManager:
   - floor
   - environment
   - checkPoint
+  - Menu
   layers:
   - Default
   - TransparentFX
