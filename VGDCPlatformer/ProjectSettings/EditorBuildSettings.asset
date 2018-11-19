@@ -44,4 +44,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BasicIntroduction.unity
     guid: bf1c8c3cc9f4215459d6c6bf6ac4153a
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 31882ffc80f31fa429f714597dafb156
+  - enabled: 1
+    path: Assets/Scenes/SpeedTileMap.unity
+    guid: 8a9030914030caa42ae2207065604fbb
   m_configObjects: {}
