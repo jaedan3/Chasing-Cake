@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SpeedTileMap.unity
     guid: 8a9030914030caa42ae2207065604fbb
+  - enabled: 1
+    path: Assets/Scenes/LevelSelect.unity
+    guid: 66390030347060a46aca59d87961277d
   m_configObjects: {}
