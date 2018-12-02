@@ -3759,7 +3759,7 @@ Prefab:
     - target: {fileID: 114049109635337022, guid: 751a4646f503d294c94f6de88644e93a,
         type: 2}
       propertyPath: newScene
-      value: DoubleJumpMap
+      value: InteractionMap1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 751a4646f503d294c94f6de88644e93a, type: 2}
