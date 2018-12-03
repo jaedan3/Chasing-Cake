@@ -5,28 +5,31 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Beginner/_scene/SampleScene.unity
     guid: 032fa15e868e7f24299f482d07aa9bf1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MichaelsScene.unity
     guid: ea7bb4cc723930b469f88f92fd6727b1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AnniesScene.unity
     guid: 98535ed371ba26d469af95806cbe180b
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 4c0a8cf08100b2241b305ce3f6457249
+  - enabled: 0
     path: Assets/Scenes/BrandonsScene.unity
     guid: a07c298830a506c459bdd0d2671ece61
   - enabled: 1
     path: Assets/Scenes/GravityMap1.unity
     guid: 78f9320badd68b04c9bb4d093d5dfbd3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/JoonsScene.unity
     guid: 25ad309b6b689e943b4a780bc06357e1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/KennedysScene.unity
     guid: 9ee1b3055f964dd41b4ab9f50c7e3316
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ObservantCakes.unity
     guid: 27a9d105dd3828c4b90072b4de8a8344
   - enabled: 1
@@ -35,9 +38,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DoubleJumpMap.unity
     guid: f0eafb8b1f11a1c4aac53d91dc425d42
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 4c0a8cf08100b2241b305ce3f6457249
   - enabled: 1
     path: Assets/Scenes/InteractionMap1.unity
     guid: 066ea62e7847fff42963fc337be8cc0d
