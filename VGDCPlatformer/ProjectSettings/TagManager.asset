@@ -10,6 +10,7 @@ TagManager:
   - environment
   - checkPoint
   - Menu
+  - UIController
   layers:
   - Default
   - TransparentFX
