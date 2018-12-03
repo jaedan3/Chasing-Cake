@@ -219,6 +219,11 @@ Prefab:
       propertyPath: m_Text
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114948071628252906, guid: 8b842180dbb10d14d94cce26c4932c07,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: PushTileTutorial
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b842180dbb10d14d94cce26c4932c07, type: 2}
   m_IsPrefabAsset: 0
@@ -333,6 +338,11 @@ Prefab:
       propertyPath: m_Text
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114948071628252906, guid: 8b842180dbb10d14d94cce26c4932c07,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: DoubleJump2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b842180dbb10d14d94cce26c4932c07, type: 2}
   m_IsPrefabAsset: 0
@@ -446,6 +456,11 @@ Prefab:
         type: 2}
       propertyPath: m_Text
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114948071628252906, guid: 8b842180dbb10d14d94cce26c4932c07,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: InteractionMap1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b842180dbb10d14d94cce26c4932c07, type: 2}
@@ -664,7 +679,7 @@ Prefab:
     - target: {fileID: 114948071628252906, guid: 8b842180dbb10d14d94cce26c4932c07,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: GravityMap2
+      value: NewGravity2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b842180dbb10d14d94cce26c4932c07, type: 2}
@@ -882,6 +897,11 @@ Prefab:
         type: 2}
       propertyPath: m_Text
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114948071628252906, guid: 8b842180dbb10d14d94cce26c4932c07,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: SpeedTileMap
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b842180dbb10d14d94cce26c4932c07, type: 2}
@@ -1270,6 +1290,11 @@ Prefab:
         type: 2}
       propertyPath: m_Text
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114948071628252906, guid: 8b842180dbb10d14d94cce26c4932c07,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: DoubleJumpMap
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b842180dbb10d14d94cce26c4932c07, type: 2}
