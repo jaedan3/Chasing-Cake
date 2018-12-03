@@ -71,7 +71,7 @@ public class PlayerMovementBeginner : MonoBehaviour
         if(currentVerticalMove != 0)
             Debug.Log(currentVerticalMove);
 
-        if (m_RigidBody2D.gravityScale == 1)
+        if (m_RigidBody2D.gravityScale == 5)
         {
             uiShit3.SetActive(false);
             uiShit4.SetActive(false);
