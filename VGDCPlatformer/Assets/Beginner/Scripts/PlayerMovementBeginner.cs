@@ -19,6 +19,7 @@ public class PlayerMovementBeginner : MonoBehaviour
     private Vector3 m_Velocity;
     private SpriteRenderer flip;
     private float currentVerticalMove = 0f;
+    GameObject uiShit2;
 
 
 
@@ -32,6 +33,7 @@ public class PlayerMovementBeginner : MonoBehaviour
     private bool canDoubleJump = false;
     public Transform m_GroundCheck;
     public LayerMask m_GroundLayer;
+    GameObject uiShit;
 
 
     // Use this for initialization
@@ -44,6 +46,13 @@ public class PlayerMovementBeginner : MonoBehaviour
         speedMultiplier = 1;
         m_Velocity = Vector3.zero; //same as new Vector3(0,0,0)
         flip = gameObject.GetComponent<SpriteRenderer>();
+
+    }
+
+    private void Awake()
+    {
+        uiShit2 = GameObject.Find("SpeedUI");
+        uiShit = GameObject.Find("DoubleJumpUI");
     }
 
     // Update is called once per frame
@@ -58,8 +67,14 @@ public class PlayerMovementBeginner : MonoBehaviour
         if(currentVerticalMove != 0)
             Debug.Log(currentVerticalMove);
 
+        if (currentVerticalMove == 0 && canDoubleJump == false)
+        {
+            uiShit.SetActive(false);
+        }
+
         if (m_Grounded && Input.GetButtonDown("Jump") && canDoubleJump == false)
         {
+            uiShit.SetActive(false);
             m_Grounded = false;
             m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, m_JumpForce);
             m_DoubleJump = false;
@@ -75,6 +90,8 @@ public class PlayerMovementBeginner : MonoBehaviour
         {
             m_DoubleJump = false;
             m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, m_JumpForce);
+            uiShit.SetActive(false);
+
         }
     }
 
@@ -101,6 +118,11 @@ public class PlayerMovementBeginner : MonoBehaviour
     // FixedUpdate is called multiple times per frame at different rates
     void FixedUpdate()
     {
+
+        if (speedMultiplier == 1)
+        {
+            uiShit2.SetActive(false);
+        }
         Vector3 targetVelocity = new Vector2(horizontalMove * 10f * Time.fixedDeltaTime, m_RigidBody2D.velocity.y);
         m_RigidBody2D.velocity = targetVelocity;
 

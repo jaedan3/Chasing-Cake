@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class DoubleJump : MonoBehaviour {
     PlayerMovementBeginner player;
+    GameObject uiShit;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start() {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovementBeginner>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+
+    }
+
+    private void Awake()
+    {
+        uiShit = GameObject.Find("DoubleJumpUI");
+    }
+
+    // Update is called once per frame
+    void Update () {
         
 	}
 
@@ -20,6 +28,7 @@ public class DoubleJump : MonoBehaviour {
         if (collision.tag == "Player")
         {
             player.changeDoubleJump(true);
+            uiShit.SetActive(true);
         }
     }
 
