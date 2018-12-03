@@ -34,6 +34,8 @@ public class PlayerMovementBeginner : MonoBehaviour
     public Transform m_GroundCheck;
     public LayerMask m_GroundLayer;
     GameObject uiShit;
+    GameObject uiShit3;
+    GameObject uiShit4;
 
 
     // Use this for initialization
@@ -53,6 +55,8 @@ public class PlayerMovementBeginner : MonoBehaviour
     {
         uiShit2 = GameObject.Find("SpeedUI");
         uiShit = GameObject.Find("DoubleJumpUI");
+        uiShit3 = GameObject.Find("IncreasedGravityUI");
+        uiShit4 = GameObject.Find("DecreasedGravityUI");
     }
 
     // Update is called once per frame
@@ -66,6 +70,12 @@ public class PlayerMovementBeginner : MonoBehaviour
         animator.SetFloat("VerticalSpeed", currentVerticalMove);
         if(currentVerticalMove != 0)
             Debug.Log(currentVerticalMove);
+
+        if (m_RigidBody2D.gravityScale == 1)
+        {
+            uiShit3.SetActive(false);
+            uiShit4.SetActive(false);
+        }
 
         if (currentVerticalMove == 0 && canDoubleJump == false)
         {

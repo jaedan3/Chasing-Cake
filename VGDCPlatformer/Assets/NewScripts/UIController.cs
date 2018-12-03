@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour {
         
         for (int i = 0; i < uiThings.Length; i++)
         {
+            print(uiThings[i]);
             uiThings[i].SetActive(false);
         }
 	}
