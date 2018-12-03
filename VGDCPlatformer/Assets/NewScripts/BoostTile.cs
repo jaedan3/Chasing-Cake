@@ -37,6 +37,7 @@ public class BoostTile : MonoBehaviour {
         {
             Debug.Log("Speedup");
             player.setSpeedMultiplier(2);
+            UIShit.SetActive(true);
         }
     }
 }

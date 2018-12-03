@@ -93,6 +93,10 @@ public class PlayerMovementBeginner : MonoBehaviour
             uiShit.SetActive(false);
 
         }
+        if (speedMultiplier == 1)
+        {
+            uiShit2.SetActive(false);
+        }
     }
 
     public bool getInverse()
@@ -119,10 +123,7 @@ public class PlayerMovementBeginner : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (speedMultiplier == 1)
-        {
-            uiShit2.SetActive(false);
-        }
+        
         Vector3 targetVelocity = new Vector2(horizontalMove * 10f * Time.fixedDeltaTime, m_RigidBody2D.velocity.y);
         m_RigidBody2D.velocity = targetVelocity;
 
